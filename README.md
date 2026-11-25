@@ -512,3 +512,371 @@ int main()
 
     return 0;
 }
+
+Swap Two Numbers Using Pointers
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a, b, temp;
+    int *p, *q;
+
+    cout << "Enter two numbers: ";
+    cin >> a >> b;
+
+    p = &a;
+    q = &b;
+
+    temp = *p;
+    *p = *q;
+    *q = temp;
+
+    cout << "After swapping:" << endl;
+    cout << "a = " << a << endl;
+    cout << "b = " << b;
+
+    return 0;
+}
+
+
+Class Student – Create Objects and Display Details
+
+
+#include <iostream>
+using namespace std;
+
+class Student
+{
+    string name;
+    int roll;
+    float marks;
+
+public:
+    void getData()
+    {
+        cout << "Enter name, roll and marks: ";
+        cin >> name >> roll >> marks;
+    }
+
+    void display()
+    {
+        cout << "\nName: " << name;
+        cout << "\nRoll: " << roll;
+        cout << "\nMarks: " << marks << endl;
+    }
+};
+
+int main()
+{
+    Student s;
+
+    s.getData();
+    s.display();
+
+    return 0;
+}
+
+
+Area of Rectangle Using Pointers
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float length, breadth;
+    float *p, *q;
+
+    cout << "Enter length and breadth: ";
+    cin >> length >> breadth;
+
+    p = &length;
+    q = &breadth;
+
+    cout << "Area of rectangle = " << (*p) * (*q);
+
+    return 0;
+}
+
+
+Structure Employee
+
+
+#include <iostream>
+using namespace std;
+
+struct Employee
+{
+    int emp_id;
+    string name;
+    float salary;
+};
+
+int main()
+{
+    Employee e;
+
+    cout << "Enter employee ID: ";
+    cin >> e.emp_id;
+
+    cout << "Enter name: ";
+    cin >> e.name;
+
+    cout << "Enter salary: ";
+    cin >> e.salary;
+
+    cout << "\nEmployee Details";
+    cout << "\nID: " << e.emp_id;
+    cout << "\nName: " << e.name;
+    cout << "\nSalary: " << e.salary;
+
+    return 0;
+}
+
+
+Class Book – Display Details of 5 Books
+
+
+#include <iostream>
+using namespace std;
+
+class Book
+{
+    int id;
+    string title;
+    float price;
+
+public:
+    void getData()
+    {
+        cout << "Enter book ID, title and price: ";
+        cin >> id >> title >> price;
+    }
+
+    void display()
+    {
+        cout << "\nBook ID: " << id;
+        cout << "\nTitle: " << title;
+        cout << "\nPrice: " << price << endl;
+    }
+};
+
+int main()
+{
+    Book b[5];
+
+    for(int i = 0; i < 5; i++)
+    {
+        b[i].getData();
+    }
+
+    cout << "\nBook Details";
+
+    for(int i = 0; i < 5; i++)
+    {
+        b[i].display();
+    }
+
+    return 0;
+}
+
+
+Multiple Exception Handling – Integer and Character
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int choice;
+
+    cout << "Enter 1 for integer exception";
+    cout << "\nEnter 2 for character exception";
+    cout << "\nEnter choice: ";
+    cin >> choice;
+
+    try
+    {
+        if(choice == 1)
+        {
+            throw 10;
+        }
+        else if(choice == 2)
+        {
+            throw 'A';
+        }
+    }
+    catch(int x)
+    {
+        cout << "Integer exception caught";
+    }
+    catch(char x)
+    {
+        cout << "Character exception caught";
+    }
+
+    return 0;
+}
+
+
+Function Overloading – Area of Square and Rectangle
+
+
+#include <iostream>
+using namespace std;
+
+void area(int s)
+{
+    cout << "Area of square = " << s * s << endl;
+}
+
+void area(int l, int b)
+{
+    cout << "Area of rectangle = " << l * b;
+}
+
+int main()
+{
+    int s, l, b;
+
+    cout << "Enter side of square: ";
+    cin >> s;
+
+    cout << "Enter length and breadth: ";
+    cin >> l >> b;
+
+    area(s);
+    area(l, b);
+
+    return 0;
+}
+
+
+Exception Handling – Division by Zero
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a, b;
+
+    cout << "Enter two numbers: ";
+    cin >> a >> b;
+
+    try
+    {
+        if(b == 0)
+        {
+            throw b;
+        }
+
+        cout << "Division = " << a / b;
+    }
+    catch(int x)
+    {
+        cout << "Exception: Division by zero";
+    }
+
+    return 0;
+}
+
+
+File Handling – Create student.txt
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    string name;
+
+    cout << "Enter student name: ";
+    cin >> name;
+
+    ofstream file("student.txt");
+
+    file << name;
+
+    file.close();
+
+    cout << "Data written successfully";
+
+    return 0;
+}
+
+
+Function Overloading – Sum of Two and Three Integers
+
+
+#include <iostream>
+using namespace std;
+
+void sum(int a, int b)
+{
+    cout << "Sum of two numbers = " << a + b << endl;
+}
+
+void sum(int a, int b, int c)
+{
+    cout << "Sum of three numbers = " << a + b + c;
+}
+
+int main()
+{
+    int a, b, c;
+
+    cout << "Enter three numbers: ";
+    cin >> a >> b >> c;
+
+    sum(a, b);
+    sum(a, b, c);
+
+    return 0;
+}
+
+
+Multiple Exception Handling – Integer and Character
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a;
+
+    cout << "Enter 1 or 2: ";
+    cin >> a;
+
+    try
+    {
+        if(a == 1)
+        {
+            throw 10;
+        }
+        else
+        {
+            throw 'A';
+        }
+    }
+    catch(int x)
+    {
+        cout << "Integer exception caught";
+    }
+    catch(char y)
+    {
+        cout << "Character exception caught";
+    }
+
+    return 0;
+}
